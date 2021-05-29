@@ -1,0 +1,17 @@
+<%= render 'nav_bar' %>
+
+<div class="container">
+  <div class="shadow-sm p-3 mb-5 mt-1 bg-body rounded bg-white">
+    <%= @restaurant.name %>
+    <%= @restaurant.address %>
+    <%= @restaurant.phone_number %>
+    <%= @restaurant.category %>
+
+    <% @restaurant.reviews.each do |review| %>
+      <p><%= review.content %></p>
+      <p><%= '⭐️' * review.rating %></p>
+    <% end %>
+
+    <%= link_to 'Add Review', new_restaurant_review_path(@restaurant), class: "bt btn-primary text-white", type: 'button'  %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<%= render 'nav_bar' %>
+
+<div class="container">
+
+    <% @restaurants.each do |restaurant|%>
+      <div class="shadow-sm p-3 mb-2 mt-1 bg-body rounded bg-white">
+        <p><%= restaurant.name %><%= restaurant.category %></p>
+        <%= link_to 'show', restaurant_path(restaurant), class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+</div>
+
